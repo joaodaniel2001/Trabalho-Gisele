@@ -1,1 +1,64 @@
+.leftbar {
+    position: fixed;
+    height: 100vh;
+    background-color: var(--blue-bg);
+    width: 90px;
+    padding-top: 100px;
+    transition: width 0.4s ease, box-shadow 0.4s ease;
+    z-index: 999;
+}
 
+.leftbar:hover {
+    width: 250px;
+    box-shadow: 2px 0 15px rgba(0, 0, 0, 0.3);
+}
+
+/* Menu */
+.leftbar-menu {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+}
+
+.leftbar-icon-text {
+    display: flex;
+    align-items: center;
+    color: var(--text-color);
+    cursor: pointer;
+    padding: 15px 25px;
+    gap: 20px;
+    white-space: nowrap;
+    transition: background-color 0.2s ease;
+    border-left: 4px solid var(--blue-bg);
+}
+
+/* Ícones */
+.leftbar-icon-text>span:first-child {
+    font-size: 1.9rem;
+    display: flex; 
+    align-items: center;
+    justify-content: center;
+    min-width: 30px;
+    transition: font-size 0.2s ease;
+}
+
+.leftbar-label {
+    opacity: 0;
+    transform: translateX(-20px);
+    transition: opacity 0.2s ease 0.2s, transform 0.2s ease 0.2s;
+}
+
+.leftbar-icon-text:hover {
+    background-color: var(--hover-button);
+}
+
+.leftbar-icon-text.active {
+    background-color: var(--active-button);
+    font-weight: bold;
+    border-left: 4px solid var(--text-color);
+}
+
+.leftbar:hover .leftbar-label {
+    opacity: 1;
+    transform: translateX(0);
+}

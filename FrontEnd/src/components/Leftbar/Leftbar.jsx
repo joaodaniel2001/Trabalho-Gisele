@@ -1,5 +1,5 @@
 import React from 'react'
-import './Leftbar'
+import './Leftbar.css'
 import { Link } from 'react-router-dom'
 
 /* Ícones */
@@ -8,6 +8,10 @@ import { RiDashboardFill } from "react-icons/ri";
 import { GrTask } from "react-icons/gr";
 
 const Leftbar = ({ menu, setMenu }) => {
+
+    const getColor = (menuName) => {
+        return menu === menuName ? '#fff' : '#8B8B8BFF'
+    }
 
     const menuItems = [
         { label: 'Home', icon: <IoHomeSharp />, to: '/' },
@@ -20,10 +24,19 @@ const Leftbar = ({ menu, setMenu }) => {
             {/* Menu */}
             <ul className="leftbar-menu">
                 {menuItems.map((item, i) => (
-                    <li
+                    <Link
                         key={i}
-                        onClick={() => }
-                    ></li>
+                        to={item.to}
+                        onClick={() => setMenu(item.label)}
+                        className={`leftbar-icon-text ${menu === item.label ? 'active' : ''}`}
+                    >
+                        <span style={{ color: getColor(item.label) }}>
+                            {item.icon}
+                        </span>
+                        <span style={{ color: getColor(item.label) }} className='leftbar-label'>
+                            {item.label}
+                        </span>
+                    </Link>
                 ))}
             </ul>
         </div>
