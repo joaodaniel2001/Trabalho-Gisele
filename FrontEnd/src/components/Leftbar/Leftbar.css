@@ -50,6 +50,7 @@
 
 .leftbar-icon-text:hover {
     background-color: var(--hover-button);
+    border-left: 4px solid var(--hover-button);
 }
 
 .leftbar-icon-text.active {

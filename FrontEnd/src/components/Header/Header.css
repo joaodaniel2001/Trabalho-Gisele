@@ -1,4 +1,18 @@
-
 .header {
     margin-bottom: 40px;
+}
+
+.header h1 {
+    display: flex;
+    align-items: center;
+    font-size: 32px;
+}
+
+.header h1 > svg {
+    font-size: 35px;
+    margin-right: 10px;
+}
+
+.header h1 > span {
+    line-height: 1;
 }
