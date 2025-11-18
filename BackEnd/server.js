@@ -41,15 +41,35 @@ app.get('/', (req, res) => {
 app.get('/dashboard/formulario-masculino', async (req, res) => {
     try {
         const sql = `
-            SELECT * FROM
-            formulario_homem;
+            SELECT * FROM formulario_masculino;
         `
 
         const [results] = await pool.execute(sql, [])
         res.status(200).json(results)
+
     } catch (error) {
 
         console.error("Erro ao buscar dados do formulário masculino:", error);
+        res.status(500).json({
+            error: "Falha ao buscar dados do servidor.",
+            details: error.message
+        });
+    }
+});
+
+// Formulário Feminino
+app.get('/dashboard/formulario-feminino', async (req, res) => {
+    try {
+        const sql = `
+            SELECT * FROM formulario_feminino;
+        `
+
+        const [results] = await pool.execute(sql, [])
+        res.status(200).json(results)
+
+    } catch (error) {
+
+        console.error("Erro ao buscar dados do formulário feminino:", error);
         res.status(500).json({
             error: "Falha ao buscar dados do servidor.",
             details: error.message

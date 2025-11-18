@@ -6,6 +6,7 @@ import { Link } from 'react-router-dom'
 import { IoHomeSharp } from "react-icons/io5";
 import { RiDashboardFill } from "react-icons/ri";
 import { GrTask } from "react-icons/gr";
+import { LuFileSpreadsheet } from "react-icons/lu";
 
 const Leftbar = ({ menu, setMenu }) => {
 
@@ -16,7 +17,7 @@ const Leftbar = ({ menu, setMenu }) => {
     const menuItems = [
         { label: 'Home', icon: <IoHomeSharp />, to: '/' },
         { label: 'Dashboard', icon: <RiDashboardFill />, to: '/dashboard' },
-        { label: 'Questionario', icon: <GrTask />, to: '/questionario' }
+        { label: 'Planilha', icon: <LuFileSpreadsheet />, to: '/planilha' }
     ]
 
     return (
